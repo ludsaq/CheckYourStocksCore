@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CheckYourStocks.Models.Stock>
+@{
+    ViewBag.Title = "Все акции";
+}
+<a asp-action="Create">Добавить Акцию</a>
+<table class="table">
+    <tr><td>Дата</td><td>Название</td><td>Стоимость</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Date</td><td>@item.Name</td><td>@item.Cost</td></tr>
+    }
+</table>
