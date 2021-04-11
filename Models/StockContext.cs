@@ -14,6 +14,6 @@ namespace CheckYourStocks.Models
             : base(options) 
         {
             Database.EnsureCreated();
-        } 
+        }
     }
 }

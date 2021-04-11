@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CheckYourStocks.Models;
 using Microsoft.EntityFrameworkCore;
+using CheckYourStocks.Infrastructure;
 
 namespace CheckYourStocks
 {
@@ -28,6 +29,12 @@ namespace CheckYourStocks
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<StockContext>(optiopn => optiopn.UseSqlServer(connection));
             services.AddControllersWithViews();
+
+            services.AddControllersWithViews(opts =>
+            {
+                opts.ModelBinderProviders.Insert(0, new EventModelBinderProvider());
+                //opts.ModelBinderProviders.Insert(1, new CustomDateTimeModelBinderProvider());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +50,8 @@ namespace CheckYourStocks
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

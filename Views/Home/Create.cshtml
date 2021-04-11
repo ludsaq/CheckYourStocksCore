@@ -1,22 +1,22 @@
 ﻿@model CheckYourStocks.Models.Stock
 @{
-    ViewBag.Title = "Добавление пользователя";
+    ViewBag.Title = "Добавление Акции";
 }
     <form asp-action="create" asp-controller="home">
         <div class="form-group">
             <label asp-for="Date" class="control-label">Дата</label>
-            <input type="text" asp-for="Date" class="form-control" />
+            <input type="date" asp-for="Date" class="form-control" />
         </div>
         <div class="form-group">
             <label asp-for="Name" class="control-label">Название</label>
-            <input type="number" asp-for="Name" class="form-control" />
+            <input name="Name" type="text" class="form-control" />
         </div>
         <div class="form-group">
             <label asp-for="Cost" class="control-label">Стоимость</label>
-            <input type="number" asp-for="Cost" class="form-control" />
+            <input name="Cost" type="number" step="0.01" class="form-control" />
         </div>
         <div class="form-group">
-            <input type="submit" value="Отправить" class="btn btn-default" />
+            <input type="submit" value="Добавить" class="btn btn-default" />
         </div>
     </form>
 

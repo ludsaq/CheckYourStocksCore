@@ -31,6 +31,7 @@ namespace CheckYourStocks.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Stock stock) 
         {
+            stock.id = Guid.NewGuid().ToString();
             db.Stocks.Add(stock);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
