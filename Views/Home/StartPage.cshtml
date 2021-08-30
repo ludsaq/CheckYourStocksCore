@@ -1,10 +1,21 @@
-﻿@{
+﻿@model CheckYourStocks.Models.User
+@{
     ViewBag.Title = "Привествие";
 }
 
-<form asp-action="create" asp-controller="home">
-    <label>Здесь будет красиво</label>
-    <div class="form-group">
-        <a asp-action="Menu">Начать</a>
-    </div>
-</form>
+    <form asp-action="create" asp-controller="home">
+        <label>Здесь будет красиво</label>
+        <div class="form-group">
+            <a asp-action="Create">Зарегистрироваться</a>
+        </div>
+        <div class="form-group">
+            <input type="text" asp-for="Name" asp-items="Model.User.Name" class="form-control" />
+            <select name="Name"  class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Войти" class="btn btn-default" />
+        </div>
+
+    </form>
+
+    

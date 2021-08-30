@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CheckYourStocks.Models
 {
-\    public class Stock
+    public class Stock
     {
         [Key]
         public string id { get; set; }

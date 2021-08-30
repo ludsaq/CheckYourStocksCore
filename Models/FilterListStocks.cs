@@ -9,6 +9,7 @@ namespace CheckYourStocks.Models
     public class FilterListStocks
     {
         public IEnumerable<Stock> Stocks { get; set; }
+        public Deposition Deposit { get; set; }
         public string Name { get; set; }
         public SelectList NameStocks { get; set; }
     }

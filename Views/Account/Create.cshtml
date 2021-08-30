@@ -1,0 +1,37 @@
+﻿@model CheckYourStocks.Models.Registration.RegisterModel
+@{
+    ViewBag.Title = "Добавление пользователя";
+}
+<h3>@ViewData["Message"]</h3>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+</head>
+<body>
+    <header>
+        <h1>Заполните, пожалуйста, поля</h1>
+    </header>
+    <form asp-action="create" asp-controller="home" class="Avtorization">
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Введите Имя</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Password">Введите пароль</label><br />
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword">Повторите пароль</label><br />
+            <input asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword" />
+        </div>
+        <div>
+            <input type="submit" value="Зарегистрироваться" />
+        </div>
+    </form>
+</body>
+</html>

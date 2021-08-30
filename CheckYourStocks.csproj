@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+    <PackageReference Include="QuikSharp" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

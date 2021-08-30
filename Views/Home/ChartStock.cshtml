@@ -1,39 +1,55 @@
 ﻿@model CheckYourStocks.Models.FilterListStocks
 @{
-    ViewBag.Title = "Динамика цен";
+    ViewBag.Title = "Динамика цен акций";
 }
-<a asp-action="Menu">Вернутся в меню</a>
-
-<form method="get">
-    <div method="get">
-        <label class="control-label">Имя: </label>
-        <select name="NameStock" asp-items="Model.NameStocks" class="form-control"></select>
-
-        <input type="submit" value="Фильтр" class="btn btn-default" />
-    </div>
-</form>
-
+<!DOCTYPE html>
+<html>
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+    <div class="stolb">
+        <menu class="block">
+            <li class="record"><a asp-action="ViewAllStock" class="content">Посмотреть список акций</a> </li>
+            <li class="record"><a asp-action="Login" class="content">Сменить пользователя</a> </li>
+        </menu>
+    </div>
+
+    <header>
+        <h1>Динамика акций</h1>
+        <h2 class="error">@ViewBag.Message</h2>
+    </header>
+
+    <form method="get">
+        <div method="get">
+            <label class="control-label">Имя: </label>
+            <select name="NameStock" asp-items="Model.NameStocks" class="form-control"></select>
+
+            <input type="submit" value="Поиск" class="btn btn-default" />
+        </div>
+    </form>
+
     <script type="text/javascript">
 
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
+         function drawChart() {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Date');
 
             var listStocks = @Html.Raw(ViewBag.listStocks);
-
             data.addColumn('number', listStocks.Name);
+            data.addColumn('number', 'Balance Cost')
+
             for (var i = 0; i < listStocks.Stocks.length; i++)
             {
                 var date = listStocks.Stocks[i].Date;
                 var cost = listStocks.Stocks[i].Cost;
-
+                var deposit = listStocks.Deposit.aweragePrice;
                 data.addRows([
-                    [date, cost]
+                    [date, cost, deposit]
                 ]);
             }
 
@@ -48,8 +64,6 @@
             chart.draw(data, options);
         }
     </script>
-</head>
-<body>
-
     <div id="curve_chart" style="width: 900px; height: 500px"></div>
 </body>
+</html>

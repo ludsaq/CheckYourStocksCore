@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CheckYourStocks.Models
 {
-    public class StockContext : DbContext
+    public class UserContext : DbContext
     {
-        public DbSet<Stock> Stocks { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        public StockContext(DbContextOptions<StockContext> options)
-            : base(options) 
+        public UserContext(DbContextOptions<UserContext> options)
+            : base(options)
         {
             Database.EnsureCreated();
-        } 
+        }
     }
 }

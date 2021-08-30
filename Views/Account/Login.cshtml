@@ -1,0 +1,38 @@
+﻿@model CheckYourStocks.Models.Registration.LoginModel
+
+
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Вход на сайт</title>
+    </head>
+    <body>
+        <header>
+            <h1>Добро пожаловать</h1>
+        </header>
+        <form asp-action="Login" asp-anti-forgery="true" class="Avtorization">
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <h2>Представьтесь пожалуйста</h2>
+            <ul class="advantages-list">
+                <li class="form-group">
+                    Введите имя
+                    <input type="text" asp-for="Name" />
+                    <span asp-validation-for="Name" />
+                </li>
+                <li class="form-group">
+                    Введите пароль
+                    <input asp-for="Password" />
+                    <span asp-validation-for="Password" />
+                </li>
+                <li class="form-group">
+                    <input type="submit" value="Войти" class="btn btn-outline-dark" />
+                </li>
+            </ul>
+            <a asp-action="Create">Еще не были у нас? Нажмите сюда чтобы зарегистрироваться</a>
+        </form>
+    </body>
+</html>
+
+
+

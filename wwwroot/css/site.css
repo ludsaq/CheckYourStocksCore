@@ -59,8 +59,8 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
   margin-bottom: 60px;
+  color: black;
 }
 .footer {
   position: absolute;
@@ -69,3 +69,114 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+/*------------------------------------------*/
+header {
+    min-width: 550px;
+    height: 120px;
+    margin-bottom: 70px;
+    padding-top: 30px;
+    text-align: center;
+    background: #b4b04b no-repeat center url(analitika2.jpg);
+    background-size: cover;
+    color: #847462;
+}
+
+error {
+    color: #ae1900;
+}
+
+.Avtorization {
+    position: relative;
+    text-align: center;
+    font-weight: normal;
+    font-size: 26px;
+    font-family: "Arial", sans-serif;
+    line-height: 34px;
+}
+
+.advantages-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.stolb {
+    margin: 0px;
+    background-color: #32332c;
+}
+
+    /* убираем отступы и поля, а также list-style для "ul", 
+			 * и добавляем "position:relative" */
+     .block {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+    }
+
+        /* применяем inline-block позиционирование к элементам навигации */
+.record {
+    margin: 0px 1px 0 0;
+    display: inline-block;
+    background-color: #32332c;
+}
+
+    /* стилизуем ссылки */
+.content {
+    display: block;
+    padding: 0 10px;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+        /* изменяем цвет фона при наведении курсора */
+    .content:hover {
+        background-color: #E64A19;
+    }
+
+.table {
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+}
+
+    .table thead th {
+        font-weight: bold;
+        text-align: left;
+        border: none;
+        padding: 10px 15px;
+        background: #d8d8d8;
+        font-size: 14px;
+    }
+
+    .table thead tr th:first-child {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .table thead tr th:last-child {
+        border-radius: 0 8px 8px 0;
+    }
+
+    .table tbody td {
+        text-align: left;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        vertical-align: top;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background: #f3f3f3;
+    }
+
+    .table tbody tr td:first-child {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .table tbody tr td:last-child {
+        border-radius: 0 8px 8px 0;
+    }
+      
